@@ -132,7 +132,7 @@ export default function AboutSection() {
     ? [...content.mainSkills, ...content.additionalSkills]
     : content.mainSkills;
 
-  const SkillCard = ({ skill, index }) => (
+  const SkillCard = ({skill ,index}: {skill: any; index: number}) => (
     <div
       key={index}
       className="group relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 hover:bg-white/10"
