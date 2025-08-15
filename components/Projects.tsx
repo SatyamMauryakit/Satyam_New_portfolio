@@ -6,7 +6,7 @@ import { projectsByMode } from "@/lib/data";
 import { Code, ExternalLink } from "lucide-react";
 
 // A reusable ProjectCard component to keep the main component clean
-function ProjectCard({ project }) {
+function ProjectCard({ project }: { project: any }) {
   return (
     <div
       className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl
@@ -58,7 +58,7 @@ function ProjectCard({ project }) {
           </div>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
-          {project.stack.map((s) => (
+          {project.stack.map((s : string) => (
             <span
               key={s}
               className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/80 transition-colors group-hover:bg-sky-500/20 group-hover:text-sky-200"
