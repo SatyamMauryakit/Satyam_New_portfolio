@@ -4,7 +4,7 @@ import { Float, Html, OrbitControls } from "@react-three/drei";
 import { Suspense, useRef } from "react";
 
 function SpinningKnot() {
-  const ref = useRef<any>(null);
+  const ref = useRef<THREE.Mesh>(null);
   useFrame(({ clock }) => {
     if (!ref.current) return;
     const t = clock.getElapsedTime();
