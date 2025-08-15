@@ -2,6 +2,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Html, OrbitControls } from "@react-three/drei";
 import { Suspense, useRef } from "react";
+import * as THREE from "three";
 
 function SpinningKnot() {
   const ref = useRef<THREE.Mesh>(null);
