@@ -3,13 +3,13 @@
 import { useRef } from "react";
 import { useFrame, Canvas } from "@react-three/fiber";
 import { OrbitControls, Cylinder, Sphere, Box } from "@react-three/drei";
-import { Group, Mesh } from "three";
+import * as THREE from "three";
 
 function DevOpsInfrastructure() {
-  const groupRef = useRef<Group | null>(null);
-  const containerRef = useRef<Mesh | null>(null);
-  const cloudRef = useRef<Mesh | null>(null);
-  const serverRef = useRef<Mesh | null>(null);
+  const groupRef = useRef<THREE.Group>(null);
+  const containerRef = useRef<THREE.Mesh>(null);
+  const cloudRef = useRef<THREE.Mesh>(null);
+  const serverRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (groupRef.current) {

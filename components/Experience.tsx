@@ -5,7 +5,7 @@ import { experienceByMode } from "@/lib/data";
 import { Briefcase, Calendar } from "lucide-react"; // Use more semantically relevant icons
 
 // A reusable component for a single experience card
-function ExperienceCard({ item }) {
+function ExperienceCard({ item }: { item: any }) {
   return (
     <GlassCard className="group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-500/10">
       {/* Visual flair on hover */}
@@ -27,7 +27,7 @@ function ExperienceCard({ item }) {
       </div>
 
       <ul className="relative z-10 mt-4 space-y-2 list-disc pl-5 text-white/80 text-sm">
-        {item.bullets.map((b, idx) => (
+        {item.bullets.map((b : string, idx : number) => (
           <li key={idx} className="transition-colors group-hover:text-white">{b}</li>
         ))}
       </ul>

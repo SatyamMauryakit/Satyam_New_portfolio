@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Contact() {
   const [isSending, setIsSending] = useState(false);
   
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
     // Simulate an API call

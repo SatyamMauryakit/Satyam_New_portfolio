@@ -4,7 +4,7 @@ import { useFrame, Canvas } from "@react-three/fiber";
 import { OrbitControls, Text3D, Center } from "@react-three/drei";
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import helvetiker from "three/examples/fonts/helvetiker_regular.typeface.json"; // Inline font import
+// Font will be loaded dynamically
 
 function DeveloperLogo() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -44,13 +44,11 @@ function DeveloperLogo() {
         />
       </mesh>
 
-      {/* Floating Code Brackets */}
-      <Center position={[-3, 1, 0]}>
-        <Text3D font={helvetiker} size={0.5} height={0.1} curveSegments={12}>
-          {"</>"}
-          <meshStandardMaterial color="#06b6d4" metalness={0.5} roughness={0.3} />
-        </Text3D>
-      </Center>
+      {/* Floating Code Brackets - Using mesh instead of Text3D */}
+      <mesh position={[-3, 1, 0]}>
+        <boxGeometry args={[1, 0.8, 0.1]} />
+        <meshStandardMaterial color="#06b6d4" metalness={0.5} roughness={0.3} />
+      </mesh>
 
       {/* Floating React Symbol */}
       <mesh position={[3, -1, 0]}>
